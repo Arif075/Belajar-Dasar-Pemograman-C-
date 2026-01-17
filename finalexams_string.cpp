@@ -6,8 +6,8 @@ void func1(const string fungsi1);
 void func2(const string fungsi2);
 string func3(string fungsi3);
 void ft3(string tf3);
-
-
+void func4(string input, string cariinput);
+void func5(string spasi);
 
 int main(){
     string teks;
@@ -17,31 +17,13 @@ int main(){
     func1(teks);
     func2(teks);
     ft3(teks);
+    func5(teks);
 
     cout << "ketikkan kalimat yang kamu cari: ";
     string cari;
     getline(cin, cari);
 
-    if (cari.empty()) {
-        cout << "kata pencarian tidak boleh kosong\n";
-        return 0;
-    }
-    size_t posisi = teks.find(cari);
-    if (posisi != string::npos){
-        cout << "kata yang kamu masukkan ditemukan diposisi index ke: ";
-        while (posisi != string::npos)
-        {  
-                cout << posisi;
-                posisi += cari.length();
-                posisi = teks.find(cari, posisi);
-                if (posisi != string::npos)
-                {
-                    cout << ", ";
-                }      
-        }
-    } else {
-        cout << "kata yang kamu cari tidak ditemukan" << endl;
-    }
+    func4(teks, cari);
 
     return 0;
 }
@@ -106,4 +88,43 @@ string func3(string fungsi3){
 }
 void ft3(string tf3){
     cout << "nyoba teks larangan: " << func3(tf3) << endl;
+}
+void func4(string input, string cariinput){
+    if (cariinput.empty()) {
+        cout << "kata pencarian tidak boleh kosong\n";
+        return;
+    }
+    size_t posisi = input.find(cariinput);
+    if (posisi != string::npos){
+        cout << "kata yang kamu masukkan ditemukan diposisi index ke: ";
+        while (posisi != string::npos)
+        {  
+                cout << posisi;
+                posisi += cariinput.length();
+                posisi = input.find(cariinput, posisi);
+                if (posisi != string::npos)
+                {
+                    cout << ", ";
+                }      
+        }
+    } else {
+        cout << "kata yang kamu cari tidak ditemukan" << endl;
+    }
+}
+void func5(string spasi){
+    bool tadispasi = false;
+    cout << "merapikan spasi yang kebanyakan: ";
+    for (char i : spasi){
+        if (i != ' ')
+        {
+        cout << i;
+        tadispasi = false;
+        }else {
+            if (tadispasi == false){
+                cout << ' ';
+            tadispasi = true;
+            }
+        }
+    }
+    cout << endl;
 }
