@@ -126,5 +126,6 @@ void func5(string spasi){
             }
         }
     }
-    cout << endl;
+    cout << endl; a
 }
+
