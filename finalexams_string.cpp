@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> 
+#include <string>
 using namespace std;
 
 void func1(const string fungsi1);
@@ -7,6 +7,7 @@ void func2(const string fungsi2);
 string func3(string fungsi3);
 void ft3(string tf3);
 void func4(string input, string cariinput);
+void func5(string spasi);
 
 int main(){
     string teks;
@@ -110,6 +111,21 @@ void func4(string input, string cariinput){
         cout << "kata yang kamu cari tidak ditemukan" << endl;
     }
 }
+void func5(string spasi){
+    bool sp = true;
+    cout << "merapikan spasi yang kebanyakan: ";
+    for (char i : spasi){
+        if (i != ' ')
+        {
+        cout << i;
+        sp = false;
 
-
-
+        }else {
+            if (sp == false){
+                cout << ' ';
+            sp = true;
+            }
+        }
+    }
+    cout << endl;
+}
