@@ -9,21 +9,7 @@ string func3(string fungsi3);
 void ft3(string tf3);
 void func4(string input, string cariinput);
 void func5(string spasi);
-void func6(string input){
-    array <int, 26> huruf = {0};
-    for(char i : input){
-        i = tolower(i);
-        if(i >= 'a' && i <= 'z'){
-            int index = i - 'a';
-            huruf[index]++;
-        }
-    }
-    for(int i = 0; i < 26; i++){
-        if(huruf[i] > 0){
-            cout << char('a' + i) << ": " << huruf[i] << endl;
-        }
-    }
-}
+void func6(string input);
 
 int main(){
     string teks;
@@ -145,4 +131,20 @@ void func5(string spasi){
         }
     }
     cout << endl;
+}
+
+void func6(string input){
+    array <int, 26> huruf = {0};
+    for(char i : input){
+        i = tolower(i);
+        if(i >= 'a' && i <= 'z'){
+            int index = i - 'a';
+            huruf[index]++;
+        }
+    }
+    for(int i = 0; i < 26; i++){
+        if(huruf[i] > 0){
+            cout << char('a' + i) << ": " << huruf[i] << endl;
+        }
+    }
 }
