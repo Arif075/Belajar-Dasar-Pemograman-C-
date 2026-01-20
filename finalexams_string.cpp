@@ -7,7 +7,6 @@ void func2(const string fungsi2);
 string func3(string fungsi3);
 void ft3(string tf3);
 void func4(string input, string cariinput);
-void func5(string spasi); //pr disini
 
 int main(){
     string teks;
@@ -110,23 +109,6 @@ void func4(string input, string cariinput){
     } else {
         cout << "kata yang kamu cari tidak ditemukan" << endl;
     }
-}
-void func5(string spasi){
-    bool tadispasi = false;
-    cout << "merapikan spasi yang kebanyakan: ";
-    for (char i : spasi){
-        if (i != ' ')
-        {
-        cout << i;
-        tadispasi = false;
-        }else {
-            if (tadispasi == false){
-                cout << ' ';
-            tadispasi = true;
-            }
-        }
-    }
-    cout << endl;
 }
 
 
