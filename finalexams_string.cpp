@@ -10,24 +10,7 @@ void ft3(string tf3);
 void func4(string input, string cariinput);
 void func5(string spasi);
 void func6(string input);
-string func7(string tukar){
-    int start = 0; // indeks awal kata
-    for (int i = 0; i <= tukar.length(); i++) {
-        // Deteksi akhir kata (spasi atau akhir string)
-        if (i == tukar.length() || tukar[i] == ' ') {
-            int end = i - 1; // indeks terakhir karakter kata
-            // Swap karakter dari ujung ke tengah
-            int left = start, right = end;
-            while (left < right) {
-                swap(tukar[left], tukar[right]);
-                left++;
-                right--;
-            }
-            start = i + 1; // kata berikutnya dimulai setelah spasi
-        }
-    }
-    return tukar;
-}
+string func7(string tukar);
 
 int main(){
     string teks;
@@ -166,4 +149,22 @@ void func6(string input){
             cout << char('a' + i) << ": " << huruf[i] << endl;
         }
     }
+}
+string func7(string tukar){
+    int start = 0; // indeks awal kata
+    for (int i = 0; i <= tukar.length(); i++) {
+        // Deteksi akhir kata (spasi atau akhir string)
+        if (i == tukar.length() || tukar[i] == ' ') {
+            int end = i - 1; // indeks terakhir karakter kata
+            // Swap karakter dari ujung ke tengah
+            int left = start, right = end;
+            while (left < right) {
+                swap(tukar[left], tukar[right]);
+                left++;
+                right--;
+            }
+            start = i + 1; // kata berikutnya dimulai setelah spasi
+        }
+    }
+    return tukar;
 }
