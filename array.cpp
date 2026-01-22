@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     int x[5];
-    x[0] = 10;
+    x[0] = 10;//ini komen
     x[1] = 20;
     x[2] = 30;
     x[3] = 40;
@@ -24,4 +24,5 @@ int main(){
     cout << "ini adalah nilai dari x(4) versi pointer: " << y[4] << " alamatnya: " << &y[4] << endl;
 
     return 0;
+
 }
