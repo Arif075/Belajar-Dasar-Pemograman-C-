@@ -3,13 +3,28 @@
 #include <array>
 using namespace std;
 
+// Menampilkan analisis teks (panjang, kata, spasi)
 void func1(const string fungsi1);
-void func2(const string fungsi2);
+
+// Menampilkan teks dengan spasi diganti underscore
+void func2(string fungsi2);
+
+// Menyensor kata-kata terlarang dengan '*'
 string func3(string fungsi3);
+
+// Wrapper untuk menampilkan hasil func3
 void ft3(string tf3);
+
+// Mencari semua posisi substring dalam teks
 void func4(string input, string cariinput);
+
+// Menormalkan spasi berlebihan menjadi satu spasi
 void func5(string spasi);
+
+// Menghitung frekuensi kemunculan huruf
 void func6(string input);
+
+// Membalik karakter dalam setiap kata
 string func7(string tukar);
 
 int main(){
@@ -62,7 +77,7 @@ void func1(const string fungsi1){
     cout << "spasi pada kalimatmu berjumlah: " << spasi << endl;
     cout << "jumlah kata pada kalimatmu sebanyak: " << kata << endl;
 }
-void func2(const string fungsi2){
+void func2(string fungsi2){
     cout << "kalimatmu saat dipisah spasi dan underscore: ";
     for (char i : fungsi2)
     {
@@ -150,6 +165,7 @@ void func6(string input){
         }
     }
 }
+
 string func7(string tukar){
     int start = 0; // indeks awal kata
     for (int i = 0; i <= tukar.length(); i++) {
