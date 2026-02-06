@@ -28,7 +28,7 @@ void func6(string input);
 string func7(string tukar);
 
 int main(){
-    string teks;
+    string teks, cari;
 
     cout << "silahkan masukkan sebuah kalimat: ";
     getline(cin, teks);
@@ -40,7 +40,6 @@ int main(){
     cout << "Kalimat setelah swap: " << func7(teks) << endl;
 
     cout << "ketikkan kalimat yang kamu cari: ";
-    string cari;
     getline(cin, cari);
 
     func4(teks, cari);
@@ -48,47 +47,57 @@ int main(){
     return 0;
 }
 
-void func1(const string fungsi1){
-    cout << "kalimat yang kamu masukkan: ";
-    for (char i : fungsi1)
-    {
-        cout << i;
+void analyzeText(const string& text){
+    cout << "Kalimat yang kamu masukkan: ";
+    for (char ch : text){
+        cout << ch;
     }
     cout << endl;
-    cout << "panjang karakter kalimatmu:" << fungsi1.length() << endl;
-    int spasi = 0, kata = 0;
-    bool dalamkata = false;
 
-    for (char i : fungsi1)
-    {
-        if (i != ' ') //jika karakter i bukan sebuah spasi buka gerbang untuknya
-        {   
-            if (dalamkata == false) //apakah kita tidak sedang dalam kata, jika iya maka ini awal kata baru (sama saja kayak !dalamkata )
-            {
-                kata++; //tambahkan nilai kata
-                dalamkata = true; //kita sekarang berada dalam kata dan kunci
-            } 
-        }else{ //jika karakter adalah spasi
-                dalamkata = false; //kita keluar dari kata
-                spasi++; //keluar dari kata dan tambah jumlah spasi
+    cout << "Panjang karakter kalimatmu: " << text.length() << endl;
+
+    int spaceCount = 0;
+    int wordCount = 0;
+    bool inWord = false;
+
+    for (char ch : text){
+        if (ch != ' '){
+            if (!inWord){
+                wordCount++;
+                inWord = true;
             }
-        
+        } else {
+            inWord = false;
+            spaceCount++;
+        }
     }
-    cout << "spasi pada kalimatmu berjumlah: " << spasi << endl;
-    cout << "jumlah kata pada kalimatmu sebanyak: " << kata << endl;
+
+    cout << "Spasi: " << spaceCount << endl;
+    cout << "Jumlah kata: " << wordCount << endl;
 }
-void func2(string fungsi2){
+
+
+
+
+
+
+
+void func2(string fungsi2) {
     cout << "kalimatmu saat dipisah spasi dan underscore: ";
     for (char i : fungsi2)
     {
+        // 1. Cek dulu: jika karakter adalah spasi, ganti jadi underscore
         if (i == ' ')
         {
             i = '_';
         }
+
+        // 2. Baru cetak karakter (i) diikuti satu spasi pemisah agar rapi
         cout << i << " ";
     }
-    cout << endl; 
+    cout << endl;
 }
+
 string func3(string fungsi3){
     string larangan[] = {"burik", "dekil", "kucel", "bebal", "culas", "pelit", "sombong", "angkuh", "lebay", "alay", "cupu", "culun", "kudet", "dungu", "pandir", "senga", "songong", "rempong", "bacot", "jablay"};
     for (char &kecil : fungsi3)
